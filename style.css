@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:500');
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: none;
+    border-radius: 0px;
+    border: transparent;
+}
+
+body {
+    background-color: white;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+body {
+    overflow: hidden;
+}
+
+header {
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 10px 60px;
+    background-color: black;
+    .logo {
+        padding: 0;
+        width: 45px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .navbar {
+        margin-left: 100px;
+        ul {
+            display: flex;
+            list-style: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            li {
+                margin: 0 15px;
+                a {
+                    transition: all 0.2s ease-in-out;
+                    text-decoration: none;
+                    color: rgb(163, 163, 163);
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    .btn {
+        margin-left: auto;
+        font-size: 1.2rem;
+        a {
+            padding: 8px;
+            margin-right: 15px;
+            border-radius: 50px;
+            background-color: rgb(29, 29, 29);
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            color: rgb(163, 163, 163);
+            &:hover {
+                color: white;
+            }
+        }
+        button {
+            padding: 8px 15px;
+            border-radius: 10px;
+            background-color: rgb(255,186,0);
+            transition: all 0.2s ease-in-out;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: black;
+            cursor: pointer;
+        }
+    }
+}
+
+.home {
+    position: relative;
+    img.background-image {
+        width: 100%;
+        height: auto;
+    }
+    .content {
+        position: absolute;
+        top: 35%;
+        left: 5%;
+        img {
+            width: 500px;
+            height: auto;
+        }
+        button {
+            transform: translateX(-300%) translateY(200%);
+            padding: 8px 15px;
+            border-radius: 10px;
+            background-color: rgb(255,186,0);
+            transition: all 0.2s ease-in-out;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: black;
+            cursor: pointer;
+        }
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+        justify-content: space-between;
+        
+        .logo {
+            width: 100px;
+        }
+        
+        .navbar {
+            margin-left: 0px;
+            ul {
+                font-size: 0.9rem;
+                li {
+                    margin: 0 8px;
+                }
+            }
+        }
+        
+        .btn {
+            margin-left: 0px;
+            font-size: 1rem;
+            
+            a {
+                margin-right: 8px;
+                padding: 6px;
+            }
+            
+            button {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .home {
+        .content {
+            top: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            
+            img {
+                width: 90%;
+                max-width: 300px;
+            }
+            
+            button {
+                transform: translateY(50px);
+                margin-top: 20px;
+            }
+        }
+        
+        .background-image {
+            height: 100vh;
+            object-fit: cover;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 8px 15px;
+        
+        .logo {
+            width: 100px;
+        }
+        
+        .navbar {
+            display: none;
+        }
+        
+        .btn {
+            button {
+                padding: 5px 10px;  
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .home {
+        img.background-image {
+            width: 100%;
+            height: auto;
+        }
+        .content {
+            top: 20%;
+            
+            img {
+                max-width: 250px;
+            }
+        }
+    }
+}
