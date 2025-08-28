@@ -1,3 +1,38 @@
+document.querySelectorAll('.cards p').forEach(card => {
+    card.addEventListener('click', () => {
+        showLoginPopup();
+    });
+});
+
+function showLoginPopup() {
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.innerHTML = `
+        <div class="popup-content">
+            <h3>Login Required</h3>
+            <p>Please login with your account to continue</p>
+            <div class="popup-buttons">
+                <button onclick="closePopup()">Close</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(popup);
+}
+
+function closePopup() {
+    const popup = document.querySelector('.popup');
+    if (popup) {
+        popup.remove();
+    }
+}
+
+function redirectToLogin() {
+    // Scroll to login section
+    const loginSection = document.querySelector('.login');
+    loginSection.scrollIntoView({ behavior: 'smooth' });
+    closePopup();
+}
+
 function submitid(event) {
     event.preventDefault();
     const idInput = document.getElementById("idinput");
