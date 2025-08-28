@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:500');
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: none;
+    border-radius: 0px;
+    border: transparent;
+}
+
+body {
+    background-color: white;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+body {
+    overflow: hidden;
+}
+
+.background {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transform: translateY(20px);
+    margin: 50px 300px;
+    background-image: url("https://cdn-gop.garenanow.com/gop/mshop/www/live/assets/FF-f997537d.jpg");
+    padding: 20px 50px;
+    gap: 25px;
+    color: white;
+    img {
+        width: 100px;
+    }
+    .info {
+        p {
+            background-color: rgba(0, 0, 0, 0.334);
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.447);
+        }
+    }
+}
+
+.login {
+    margin: 50px 300px;
+    h2 {
+        color: white;
+        margin-bottom: 20px;
+        span {
+            margin-right: 5px;
+            background-color: rgb(188, 0, 0);
+            padding: 0px 10px;
+            border-radius: 5px;
+        }
+    }
+    .id {
+        p {
+            margin-bottom: 5px;
+            color: white;
+            font-size: 1.5rem;
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 10px;
+            width: 250px;
+            font-size: 1rem;
+            ::active {
+                border: none;
+            }
+            ::after {
+                border: none;
+            }
+        }
+        button {
+            padding: 10px 15px;
+            background-color: rgb(188, 0, 0);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            &:hover {
+                background-color: darken(rgb(188, 0, 0), 10%);
+            }
+        }
+    }
+    .social-login {
+        display: flex;
+        color: white;
+        font-size: 1rem;
+        gap: 15px;
+        margin-top: 15px;
+        align-items: center;
+        p {
+            margin-bottom: 10px;
+        }
+        li {
+            list-style: none;
+            a {
+                font-size: 1.5rem;
+                color: white;
+                text-decoration: none;
+                transition: color 0.3s;
+                &:hover {
+                    color: darken(white, 10%);
+                }
+            }
+        }
+    }
+}
