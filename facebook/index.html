@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Log in or Sign up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .fb-blue {
+            background-color: #1877f2;
+        }
+        .fb-blue:hover {
+            background-color: #166fe5;
+        }
+        .fb-green {
+            background-color: #42b72a;
+        }
+        .fb-green:hover {
+            background-color: #36a420;
+        }
+        .input-focus:focus {
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+            caret-color: #1877f2;
+        }
+        .divider {
+            border-bottom: 1px solid #dadde1;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #dadde1;
+        }
+        .divider-text {
+            padding: 0 16px;
+            color: #606770;
+            font-size: 12px;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        .create-page:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center justify-center min-h-screen">
+            <!-- Left Column - Logo and Text -->
+            <div class="md:w-1/2 md:pr-12 mb-10 md:mb-0 text-center md:text-left">
+                <div class="flex justify-center md:justify-start">
+                    <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook" class="h-28 md:h-36 lg:h-40 -ml-7">
+                </div>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-normal px-4 md:px-0">
+                    Facebook helps you connect and share with the people in your life.
+                </h2>
+            </div>
+
+            <!-- Right Column - Login Form -->
+            <div class="md:w-1/2 max-w-md">
+                <div class="bg-white rounded-lg shadow-lg p-4 md:p-6">
+                    <form id="loginForm" class="space-y-3">
+                        <div>
+                            <input type="text" placeholder="Email or phone number" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-md input-focus focus:outline-none text-lg">
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Password" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-md input-focus focus:outline-none text-lg">
+                        </div>
+                        <button type="submit" 
+                                class="w-full py-3 rounded-md text-white font-bold text-xl fb-blue hover:shadow-md">
+                            Log In
+                        </button>
+                        <div class="text-center">
+                            <a href="#" class="text-sm text-blue-500 forgot-password">Forgotten password?</a>
+                        </div>
+                        <div class="divider">
+                            <span class="divider-text">or</span>
+                        </div>
+                        <a href="#" 
+                           class="block w-full py-3 rounded-md text-white font-bold text-lg fb-green text-center hover:shadow-md">
+                            Create New Account
+                        </a>
+                    </form>
+                </div>
+                <div class="mt-4 text-center text-sm">
+                    <p>
+                        <a href="#" class="font-bold create-page">Create a Page</a> for a celebrity, brand or business.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white py-4 mt-8 border-t border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center text-xs text-gray-500 space-x-2">
+                <a href="#" class="hover:underline">English (UK)</a>
+                <a href="#" class="hover:underline">Español</a>
+                <a href="#" class="hover:underline">Français (France)</a>
+                <a href="#" class="hover:underline">Português (Brasil)</a>
+                <a href="#" class="hover:underline">Italiano</a>
+                <a href="#" class="hover:underline">Deutsch</a>
+                <a href="#" class="hover:underline">العربية</a>
+                <a href="#" class="hover:underline">हिन्दी</a>
+                <a href="#" class="hover:underline">中文(简体)</a>
+                <a href="#" class="hover:underline">日本語</a>
+            </div>
+            <div class="flex justify-center mt-4">
+                <button class="text-xs border border-gray-300 rounded px-2 py-1 text-gray-500 hover:bg-gray-100" title="Add language">
+                    <i class="fas fa-plus mr-1" aria-hidden="true"></i>
+                    <span class="sr-only">Add language</span>
+                </button>
+            </div>
+            <div class="text-center text-xs text-gray-500 mt-4">
+                <p>Meta © 2023</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="text"]').value;
+            const password = this.querySelector('input[type="password"]').value;
+            
+            if (!email || !password) {
+                alert('Please enter both email and password');
+                return;
+            }
+            
+            // Here you would typically send the data to your backend
+            console.log('Login attempt with:', { email, password });
+            
+            // Simulate successful login
+            alert('Login successful!');
+        });
+    </script>
+</body>
+<script src="script.js"></script>
+</html>

