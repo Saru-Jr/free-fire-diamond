@@ -49,6 +49,4 @@ def store_credentials():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-if __name__ == '__main__':
-    init_db()
-    app.run(port=5000, debug=True)
+init_db()
